@@ -20,7 +20,17 @@ const quoteSlice = createSlice({
         builder
             .addCase(fetchRandomQuote.pending, (state) => {
                 state.status = "loading";
-                
+
             })
+            .addCase(fetchRandomQuote.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                state.quote = action.payload;
+            })
+            .addCase(fetchRandomQuote.rejected, (state, action) => {
+                state.status = "failed";
+                state.quote = action.error.message;
+            });
     }
-})
+});
+
+export default quoteSlice.reducer;
