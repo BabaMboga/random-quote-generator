@@ -23,6 +23,16 @@ const Quote = () => {
                 ):null}
                 {quote && status !== "loading" ? <div>{quote.content}</div> : null}
             </div>
+            <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => handleFetchQuote()}
+            >
+                <span>Generate Quote</span>
+            </button>
         </div>
-    )
-}
+    );
+};
+
+
+export default Quote;
