@@ -4,7 +4,7 @@ import App from "./App";
 import {configureStore} from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import rootReducer from "./slices/quoteSlice";
-import thunk  from "redux-thunk";
+import {thunk}  from "redux-thunk";
 
 const store = configureStore({
   reducer: rootReducer,
