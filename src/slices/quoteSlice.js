@@ -3,7 +3,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 export const fetchRandomQuote = createAsyncThunk(
     "quote/fetchRandom", 
     async () => {
-        const response = await fetch("https://zenquotes.io/api/random ");
+        const response = await fetch("https://quote-generator-api-vorr.vercel.app/random");
         const data = await response.json();
         return data;
     }
